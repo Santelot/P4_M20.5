@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M20.5</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select { font-size: 1em; padding: 5px; }
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step6Activity3 = document.querySelector('#activity-3 .step-6');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P4-M20.5</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades dinámicamente -->
+        
+                   <!-- Actividad 0 -->
+<div id="activity-0" class="activity" data-time="N/A">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar que estén disponibles los materiales y recursos necesarios.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> (Tiempo: No especificado) Proyectar Diapositiva 1 "Lista de Materiales: ¡Preparando el Laboratorio de Pruebas!" y verificar que estén disponibles los materiales y recursos necesarios: <br><br>
+                    - <strong>Cutebots</strong> con sensores de línea y baterías cargadas. <br><br>
+                    - <strong>Computadoras</strong> o tabletas con software de programación instalado. <br><br>
+                    - <strong>Plantillas</strong> de seguidor de líneas de Gnius Club.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">No aplica</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- Actividad 1 -->
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> <strong>(Tiempo: 0.5 minutos)</strong> Proyectar Diapositiva 2 "¡Bienvenidos Ingenieros de Línea Perfecta Robotics!" con el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! 🌟 ¡Bienvenidos al laboratorio de Línea Perfecta Robotics! Hoy, como ingenieros de pruebas, vamos a demostrar nuestra habilidad para programar a nuestros Cutebots y hacer que sigan la línea con la mayor precisión posible. ¡Prepárense para desafíos que pondrán a prueba nuestra calibración, control y nuestro trabajo en equipo! 🚀"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2:</strong> <strong>(Tiempo: 0.5 minutos)</strong> Proyectar Diapositiva 3 "¿Cómo te sientes hoy, Ingeniero?" con poses temáticas de ingeniería y seguimiento de líneas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros, díganme cómo se sienten hoy: <br><br>
+                    - <strong>Si están listos</strong> para empezar las pruebas y calibrar sus Cutebots, activen el Modo Calibración, moviendo los brazos como si estuvieran ajustando los sensores, y digan '¡Sensores calibrados!'. 📡 <br><br>
+                    - <strong>Si necesitan un poco más</strong> de concentración para planificar las pruebas, pongan las manos en las sienes como si estuvieran diseñando algoritmos. 🧐 <br><br>
+                    ¡Vamos a afinar nuestras mentes antes de empezar las pruebas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3:</strong> <strong>(Tiempo: 0.5 minutos)</strong> Proyectar Diapositiva 4 "Ritual de Agradecimiento: ¡Gracias por la Misión!" y guiar a los estudiantes en el ritual temático.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Juntamos nuestras manos y decimos: '¡Gracias por estar aquí, Ingenieros! Hoy vamos a calibrar nuestros Cutebots para que sigan las líneas con precisión, controlando su velocidad y trabajando en equipo para realizar mejoras. ¡Será un día lleno de aprendizaje y colaboración para la perfección! 🌟💡'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4:</strong> <strong>(Tiempo: 0.5 minutos)</strong> Proyectar Diapositiva 5 "Objetivos de la Misión: Pruebas de Calidad".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, Ingenieros de Línea Perfecta Robotics! Aquí están los objetivos de nuestras pruebas de hoy: <br><br>
+                    1. <strong>Programar el Cutebot</strong> para que siga una línea recta con ajustes de calibración. <br><br>
+                    2. <strong>Controlar la velocidad</strong> del Cutebot de forma precisa según su posición en la línea. <br><br>
+                    3. <strong>Trabajar en equipo</strong> para realizar mejoras en el seguimiento de líneas. <br><br>
+                    ¡Prepárense para demostrar su calidad en el seguimiento de líneas!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        
+        <!-- Actividad 2 -->
+<div id="activity-2" class="activity" data-time="3">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Brain Vitamin ⏰ Tiempo: 3 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Simulación de calibración y seguimiento de líneas.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> <strong>(Tiempo: 1 minuto)</strong> Proyectar Diapositiva 6 "¡Activación Cerebral: Calibración Corporal!". Explicar que realizarán un ejercicio para simular la calibración y el seguimiento de líneas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros de Línea Perfecta Robotics, vamos a activar nuestros cerebros y cuerpos para dominar la calibración de nuestros Cutebots! Hoy haremos un ejercicio que simulará cómo ajustamos la precisión y el control al seguir una línea imaginaria. ¡Prepárense para moverse con la misma precisión que sus códigos!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2:</strong> <strong>(Tiempo: 1 minuto)</strong> Proyectar Diapositiva 7 "¡Ejercicio de Coordinación: Línea Imaginaria!". Mostrar instrucciones para el ejercicio.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Vamos a movernos con precisión, ingenieros! Sigan mis instrucciones: <br><br>
+                    1. <strong>Imaginen</strong> una línea recta en el suelo. <br><br>
+                    2. <strong>Caminando</strong> sobre esa línea imaginaria, levanten una rodilla cuando escuchen 'izquierda' y la otra cuando escuchen 'derecha'. <br><br>
+                    3. <strong>Mantengan</strong> la vista al frente y muevan los brazos suavemente para equilibrarse. <br><br>
+                    ¡Este ejercicio activará nuestra coordinación, equilibrio y respuesta rápida, como en la calibración de robots!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3:</strong> <strong>(Tiempo: 1 minuto)</strong> Proyectar Diapositiva 8 "¡Reflexión: Calibración Cuerpo-Mente!". Guiar una breve discusión sobre cómo el ejercicio se relaciona con la calibración de Cutebots.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Excelente trabajo, Ingenieros! Ahora reflexionen: <br><br>
+                    - ¿Cómo creen que este ejercicio mejora nuestra <span style='color: red; font-weight: bold;'>coordinación</span>, <span style='color: red; font-weight: bold;'>precisión</span> y <span style='color: red; font-weight: bold;'>equilibrio</span>? <br><br>
+                    - ¿Qué habilidades activamos al seguir la línea imaginaria y ajustar nuestros movimientos? <br><br>
+                    Recuerden, la calibración precisa es fundamental para que nuestros Cutebots sigan la línea con eficiencia. ¡La práctica nos hará ingenieros más hábiles!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity" data-time="30">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Pruebas de calidad en Línea Perfecta Robotics.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> <strong>(Tiempo: 1 minuto)</strong> Proyectar Diapositiva 9 "¡Comienza el Desafío: Pruebas de Calidad en Línea Perfecta Robotics!" Explicar el objetivo general del reto y los niveles de dificultad.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros de Línea Perfecta Robotics, ha llegado el momento de demostrar su talento! 🚀 Hoy vamos a programar nuestros Cutebots para superar las pruebas de calidad de seguimiento de líneas. Tendremos tres niveles de desafío: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>, cada uno con retos de programación diferentes. ¡Elijan su reto y que comiencen las pruebas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2:</strong> <strong>(Tiempo: 1 minuto)</strong> Proyectar Diapositiva 10 "Preparación para el Desafío: ¡Listos para las Pruebas!". Guiar a los estudiantes para verificar y organizar los materiales antes de comenzar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Antes de empezar, ingenieros de pruebas, revisen su equipo! <br><br>
+                    - <strong>Los Cutebots</strong> con sensores de línea y baterías cargadas. <br><br>
+                    - <strong>Sus computadoras</strong> o tabletas listas para programar. <br><br>
+                    - <strong>Plantillas</strong> de seguimiento de líneas del Gnius Club. <br><br>
+                    ¡Una buena preparación nos dará el impulso necesario para las pruebas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3:</strong> <strong>(Tiempo: 1 minuto)</strong> Proyectar Diapositiva 11 "Espacio de Pruebas: Pistas de Calidad". Pedir a los equipos que coloquen las plantillas en su espacio de trabajo y las posicionen correctamente.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros de pruebas, es hora de crear sus pistas de pruebas! Coloquen las plantillas de seguimiento de líneas en sus espacios de trabajo. Asegúrense de que estén bien posicionadas para que los Cutebots puedan seguir las líneas sin problemas. ¡Dejen volar su creatividad para probar sus habilidades de programación en las pruebas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4:</strong> <strong>(Tiempo: 2 minutos)</strong> Proyectar Diapositiva 12 "Desafíos de Pruebas: ¡Calibración, Control y Rendimiento!" y detallar los objetivos y condiciones de cada nivel.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, Ingenieros! Aquí tienen los desafíos que pondrán a prueba sus habilidades: <br><br>
+                    <strong>Nivel Rookie:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para seguir la línea con ajustes de calibración. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir la línea sin desviaciones. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Enfócate en que el robot avance siguiendo la línea. <br><br>
+                    <strong>Nivel Master:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para ajustar la velocidad según su posición en la línea. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe ajustar la velocidad de forma suave. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Utiliza variables para guardar los valores de velocidad. <br><br>
+                    <strong>Nivel Hacker:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para que siga la línea con el mejor rendimiento posible. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir la línea con la mayor precisión y velocidad. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Experimenta con estrategias de corrección y utiliza variables para ajustar la velocidad."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5:</strong> <strong>(Tiempo: 20 minutos)</strong> Proyectar Diapositiva 13 "¡Manos a la Obra: A Programar las Pruebas de Calidad!". Explicar que los equipos programarán sus Cutebots con el objetivo de superar las pruebas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, Ingenieros! 🚀 Ahora programen sus Cutebots para superar cada prueba de calidad. Recuerden que la lógica, la precisión y la creatividad son sus mejores aliados para cada desafío. ¡Adelante, a demostrar su talento en la programación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6:</strong> <strong>(Tiempo: 5 minutos)</strong> Proyectar Diapositiva 14 "Pruebas y Ajustes: ¡Perfeccionando el Seguimiento!". Supervisar mientras los equipos prueban sus programas y ajustan las acciones de sus Cutebots.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros, es hora de poner a prueba sus creaciones! 🧪 Observen cómo sus Cutebots responden a las pruebas de calidad. Ajusten el código si es necesario para que la calibración, el control y el rendimiento sean óptimos. ¡La perseverancia es la clave del éxito en cada prueba!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7:</strong> <strong>(Tiempo: 1.5 minutos)</strong> Proyectar Diapositiva 15 "Demostración de Pruebas: Compartiendo el Éxito". Invitar a los equipos a mostrar su trabajo y reflexionar sobre sus estrategias y resultados en las pruebas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros de pruebas, es hora de compartir sus resultados! Presenten sus Cutebots en acción y expliquen qué estrategias usaron para superar cada prueba de calidad. ¡Aprendamos unos de otros y celebremos nuestra creatividad y trabajo en equipo para la perfección!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 8:</strong> <strong>(Tiempo: 1.5 minutos)</strong> Proyectar Diapositiva 16 "Revisión de Objetivos: ¡Pruebas Superadas!". Reflexionar con los estudiantes sobre lo aprendido y cómo lograron cumplir los objetivos planteados en las pruebas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Felicidades, Ingenieros de Línea Perfecta Robotics! 🌟 Hoy superaron las pruebas de calidad con éxito: <br><br>
+                    - Programaron la calibración inicial del Cutebot para seguir la línea. <br><br>
+                    - Ajustaron la velocidad del Cutebot según su posición en la línea. <br><br>
+                    - Trabajaron en equipo para realizar mejoras en el seguimiento. <br><br>
+                    ¡Han demostrado ser unos verdaderos ingenieros de la programación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity" data-time="7.5">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Colaboración en equipo para optimizar el seguimiento de líneas.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1.5 minutos):</strong> Proyectar Diapositiva 17 "Team Gnius: ¡Análisis de Resultados en Equipo!". Explicar cómo los roles y la colaboración permitirán revisar y optimizar los programas de las pruebas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros de Línea Perfecta Robotics, es momento de unir fuerzas como un equipo de expertos! 🤝 Usaremos el <strong>Team CANVAS</strong> para analizar cómo abordaron las pruebas de calidad y cómo podemos mejorar nuestras estrategias de seguimiento de líneas. Cada equipo tendrá roles clave: el <span style='color: red; font-weight: bold;'>Líder</span> guiará la conversación, el <span style='color: red; font-weight: bold;'>Programador</span> ajustará los códigos y el <span style='color: red; font-weight: bold;'>Observador</span> analizará el desempeño. ¡Juntos lograremos la perfección en el seguimiento de líneas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar la Diapositiva 18 "Formación de Equipos: ¡Expertos en Pruebas!". Los estudiantes tendrán 1 minuto para formar equipos de 3 y asignar roles: Líder, Programador y Observador.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 1 minuto para formar sus equipos de 3, ingenieros de pruebas! Recuerden: <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Líder</span> dirigirá la conversación y guiará el análisis de las pruebas. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Programador</span> ajustará el código basado en las ideas del equipo. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Observador</span> analizará el rendimiento del Cutebot en la línea. <br><br>
+                    ¡Trabajemos juntos como un equipo de expertos en pruebas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 2 minutos):</strong> Proyectar la Diapositiva 19 "Team CANVAS: Estrategias para Pruebas de Calidad". Cada equipo debe: 1. Analizar el trabajo realizado. 2. Proponer mejoras según los roles asignados. 3. Diseñar un plan conjunto para optimizar el seguimiento del Cutebot.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Usen el <strong>Team CANVAS</strong> para reflexionar sobre su trabajo en las pruebas de calidad, ingenieros. Pregúntense: <br><br>
+                    - ¿Qué hicimos bien al programar el seguimiento de líneas en las pruebas? <br><br>
+                    - ¿Qué podemos mejorar en la calibración, el control de velocidad y el rendimiento? <br><br>
+                    - ¿Cómo podemos trabajar juntos para que nuestro Cutebot tenga el mejor resultado en las pruebas? <br><br>
+                    ¡Compartan ideas y trabajen juntos para mejorar sus estrategias!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 3 minutos):</strong> Proyectar la Diapositiva 20 "¡Ajustes Finales: Optimizando el Rendimiento en Pruebas!". Los equipos trabajan en las siguientes tareas: Líder organiza, Programador ajusta códigos, Observador verifica el desempeño en la pista.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros de pruebas, es momento de aplicar las mejoras en sus Cutebots! <br><br>
+                    - <span style='color: red; font-weight: bold;'>Programadores:</span> ajusten los códigos basándose en las recomendaciones de su equipo. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Líderes:</span> asegúrense de que todos estén colaborando. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Observadores:</span> verifiquen cómo sus Cutebots responden a las pruebas y si han mejorado el rendimiento. <br><br>
+                    ¡Trabajen juntos para que el seguimiento sea más preciso y eficiente en las pruebas!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity" data-time="3.5">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 3.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1 minuto):</strong> Proyectar la Diapositiva 21 "Revisión de Objetivos: ¡Pruebas de Calidad Superadas!". Leer los objetivos planteados al inicio y reflexionar sobre lo aprendido y logrado en equipo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ingenieros de Línea Perfecta Robotics, es momento de celebrar sus logros como expertos en pruebas de calidad! 🌟 Revisemos nuestros objetivos: <br><br>
+                    - ¿Programamos la calibración inicial del Cutebot para seguir la línea con precisión? <br><br>
+                    - ¿Controlamos la velocidad del Cutebot según su posición en la línea, optimizando su rendimiento? <br><br>
+                    - ¿Trabajamos en equipo para realizar mejoras y lograr los mejores resultados en las pruebas? <br><br>
+                    ¡Estoy muy orgulloso del trabajo que realizaron hoy y de su compromiso con la perfección!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles ingenieros de pruebas de calidad. Dieron vida a proyectos donde los Cutebots siguieron líneas con precisión, controlaron su velocidad y respondieron de manera eficiente. ¡Felicidades a todo el equipo por su dedicación y trabajo colaborativo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 1.5 minutos):</strong> Proyectar la Diapositiva 22 "¡A Organizar el Laboratorio: Próximas Misiones!". Guiar a los estudiantes para recoger y organizar todos los materiales utilizados durante la misión.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como profesionales de la robótica, honremos nuestro espacio de trabajo. Cada equipo es responsable de recoger y organizar todos los materiales utilizados durante esta misión: <br><br>
+                    - <span style='color: red; font-weight: bold;'>Guarden</span> sus Cutebots y computadoras con cuidado. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Asegúrense</span> de que las plantillas de seguimiento estén guardadas en su lugar. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Limpien</span> sus áreas de trabajo y déjenlas listas para futuras exploraciones y misiones. <br><br>
+                    ¡Recuerden que el orden es un reflejo de nuestro compromiso con la excelencia!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+    </div>
+</body>
+</html>
